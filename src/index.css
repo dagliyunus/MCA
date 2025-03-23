@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #1a0b2e 25%,
+    #2a1052 50%,
+    #1a0b2e 75%,
+    #000000 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.animate-gradient::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.hover\:glow:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+}
+
+.particle-background {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Enhanced glass effect */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(30, 27, 75, 0.3);
+  border: 1px solid rgba(147, 51, 234, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated border gradient */
+.border-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, rgba(168, 85, 247, 0.3), rgba(147, 51, 234, 0.3));
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.border-gradient:hover::before {
+  opacity: 0.8;
+}
+
+/* Enhanced card hover effects */
+.hover-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+/* Technology cards specific hover effect */
+.tech-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  background: rgba(147, 51, 234, 0.15);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.1);
+  color: rgba(168, 85, 247, 1);
+}
+
+/* Animated background lines */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(168, 85, 247, 0.03) 0px,
+      rgba(168, 85, 247, 0.03) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(168, 85, 247, 0.03) 0px,
+      rgba(168, 85, 247, 0.03) 1px,
+      transparent 1px,
+      transparent 30px
+    );
+  mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Adjust section spacing */
+section {
+  padding: 3rem 0;
+}
+
+section + section {
+  margin-top: -1rem;
+}
+
+/* Ensure the root element takes full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+}
