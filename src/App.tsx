@@ -180,7 +180,7 @@ function App() {
             >
               <X className="h-6 w-6" />
             </button>
-            <h2 className="text-2xl font-bold text-white mb-6">Start Trading with Hypernode</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Start Trading with MCA</h2>
             <div className="space-y-4">
               <div>
                 <label className="block text-purple-200 mb-2" htmlFor="email">Email</label>
@@ -492,7 +492,7 @@ function App() {
               className="flex items-center space-x-2"
             >
               <TrendingUp className="h-8 w-8 text-purple-400" />
-              <span className="text-2xl font-bold text-white">Hypernode</span>
+              <span className="text-2xl font-bold text-white">MCA</span>
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
               <motion.a 
@@ -743,7 +743,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <TrendingUp className="h-6 w-6 text-purple-400" />
-              <span className="text-xl font-bold text-white">Hypernode</span>
+              <span className="text-xl font-bold text-white">MCA</span>
             </div>
             <div className="flex items-center space-x-4">
               <a 
@@ -755,7 +755,7 @@ function App() {
                 <Twitter className="h-5 w-5" />
               </a>
               <div className="text-purple-400 text-sm">
-                © 2025 Hypernode. All rights reserved.
+                © 2025 MCA. All rights reserved.
               </div>
             </div>
           </div>
