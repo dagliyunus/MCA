@@ -200,7 +200,9 @@ function App() {
                   placeholder="Create a password"
                 />
               </div>
-              <GradientButton onClick={() => {}} className="w-full mt-6">
+              <GradientButton onClick={() => {
+                alert("Create Account clicked - placeholder only, no backend connected!")}} 
+                className="w-full mt-6">
                 Create Account
               </GradientButton>
               <p className="text-center text-purple-200 mt-4">
