@@ -537,7 +537,7 @@ function App() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                href="https://x.com/HypernodeAi" 
+                href="https://x.com/mcaai77933" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-purple-200 hover:text-white transition"
@@ -760,7 +760,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-4">
               <a 
-                href="https://x.com/HypernodeAi" 
+                href="https://x.com/mcaai77933" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-purple-400 hover:text-white transition"
