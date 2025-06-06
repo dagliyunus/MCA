@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { 
   TrendingUp, 
   Shield, 
@@ -46,6 +46,7 @@ import GradientButton from './components/GradientButton';
 import StatsCard from './components/StatsCard';
 import FeatureCard from './components/FeatureCard';
 import AnimatedCounter from './components/AnimatedCounter';
+import MobileNav from './components/MobileNav';
 
 const initialTradingData = [
   { time: '9:00', value: 45200 },
@@ -376,6 +377,7 @@ function App() {
         </motion.div>
       )}
 
+      <AnimatePresence>
       {showInsights && (
         <motion.div 
           initial={{ opacity: 0 }}
@@ -390,11 +392,14 @@ function App() {
             className="bg-purple-950 p-8 rounded-lg shadow-xl max-w-6xl w-full mx-4 relative border border-purple-500/20 h-[80vh] overflow-y-auto glass-effect"
           >
             <button 
-              onClick={() => setShowInsights(false)}
-              className="absolute top-4 right-4 text-purple-200 hover:text-white"
-            >
-              <X className="h-6 w-6" />
-            </button>
+            onClick={() => {
+              setShowInsights(false);
+              document.body.style.overflow = 'auto'; 
+            }}
+            className="absolute top-4 right-4 text-purple-200 hover:text-white"
+          >
+            <X className="h-6 w-6" />
+          </button>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <Lightbulb className="h-6 w-6 text-purple-400 mr-2" />
               Market Insights
@@ -486,7 +491,7 @@ function App() {
           </motion.div>
         </motion.div>
       )}
-
+     </AnimatePresence>
       <header className="relative overflow-hidden">
         <nav className="container mx-auto px-6 py-4 relative z-10">
           <div className="flex items-center justify-between">
@@ -550,6 +555,8 @@ function App() {
             </motion.div>
           </div>
         </nav>
+
+        <MobileNav onInsightsClick={() => setShowInsights(true)} />
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
