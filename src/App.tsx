@@ -524,7 +524,7 @@ function App() {
                 href="#about" 
                 className="text-purple-200 hover:text-white transition"
                 onClick={() => {
-                alert("About clicked - placeholder only, no content and backend integration!")}} 
+                alert("About clicked- placeholder only, no content and backend integration!")}} 
               >
                 About
               </motion.a>
