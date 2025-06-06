@@ -207,7 +207,9 @@ function App() {
               </GradientButton>
               <p className="text-center text-purple-200 mt-4">
                 Already have an account?{' '}
-                <button className="text-purple-400 hover:text-white transition">
+                <button onClick={() => {
+                  alert("Log in clicked — placeholder only, no backend connected!");
+                }}className="text-purple-400 hover:text-white transition">
                   Log in
                 </button>
               </p>
@@ -521,6 +523,8 @@ function App() {
                 transition={{ delay: 0.3 }}
                 href="#about" 
                 className="text-purple-200 hover:text-white transition"
+                onClick={() => {
+                alert("About clicked - placeholder only, no content and backend integration!")}} 
               >
                 About
               </motion.a>
