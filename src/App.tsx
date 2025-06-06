@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
   Shield, 
   Brain, 
   BarChart3, 
-  Notebook as Robot, 
+  // Notebook as Robot, 
   ArrowRight, 
   Globe, 
-  Clock, 
-  CheckCircle, 
-  Award, 
-  Users, 
+  //Clock, 
+  //CheckCircle, 
+  //Award, 
+  //Users, 
   Server, 
   X, 
   LineChart, 
   Cpu, 
   AlertCircle, 
   TrendingDown, 
-  Zap, 
+  //Zap, 
   Target, 
   Activity, 
   PieChart, 
@@ -29,7 +29,7 @@ import {
   Layers,
   Workflow,
   Code,
-  BarChart as ChartBar 
+  //BarChart as ChartBar 
 } from 'lucide-react';
 import { 
   LineChart as RechartsLineChart, 
@@ -107,7 +107,7 @@ function App() {
         return newData;
       });
 
-      setSystemMetrics(prev => ({
+      setSystemMetrics(() => ({
         latency: +(Math.random() * 2 + 7).toFixed(1),
         activeNodes: Math.floor(Math.random() * 100 + 1200),
         networkLoad: Math.floor(Math.random() * 20 + 60),
