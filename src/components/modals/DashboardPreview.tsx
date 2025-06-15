@@ -70,9 +70,11 @@ export default function DashboardPreview({
             className="w-full bg-purple-900/50 border border-purple-500/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500"
             placeholder="Enter test token address..."
           />
-          <GradientButton onClick={onRunSimulation} className="mt-4 w-full">
-            Run Devnet Simulation
-          </GradientButton>
+          <div className="flex justify-center">
+            <GradientButton onClick={onRunSimulation} className="mt-4 w-full max-w-xs">
+              Run Devnet Simulation
+            </GradientButton>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
