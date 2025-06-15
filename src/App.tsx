@@ -47,6 +47,7 @@ import StatsCard from './components/StatsCard';
 import FeatureCard from './components/FeatureCard';
 import AnimatedCounter from './components/AnimatedCounter';
 import MobileNav from './components/MobileNav';
+import { simulateDevnetCheck } from './utils/devnet';
 
 const initialTradingData = [
   { time: '9:00', value: 45200 },
@@ -93,6 +94,7 @@ function App() {
     activeNodes: 1250,
     networkLoad: 67,
   });
+  const [contractAddress, setContractAddress] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -239,7 +241,47 @@ function App() {
               <X className="h-6 w-6" />
             </button>
             <h2 className="text-2xl font-bold text-white mb-6">AI Trading Dashboard</h2>
-            
+
+            <div className="mb-6">
+              <label className="block text-purple-200 mb-2" htmlFor="contract">
+                Contract Address (Solana Devnet)
+              </label>
+              <input 
+                type="text" 
+                id="contract"
+                value={contractAddress}
+                onChange={(e) => setContractAddress(e.target.value)}
+                className="w-full bg-purple-900/50 border border-purple-500/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500"
+                placeholder="Enter test token address..."
+              />
+              <GradientButton
+                onClick={async () => {
+                  if (!contractAddress) {
+                    alert("Please enter a contract address.");
+                    return;
+                  }
+
+                  console.log("Test simulation started for:", contractAddress);
+
+                  try {
+                    const isValid = await simulateDevnetCheck(contractAddress);
+
+                    if (isValid) {
+                      alert("✅ Token is valid on Solana Devnet. Simulation passed.");
+                    } else {
+                      alert("❌ Token not found or invalid on Devnet.");
+                    }
+                  } catch (error) {
+                    console.error("Simulation error:", error);
+                    alert("⚠️ Something went wrong during the simulation.");
+                  }
+                }}
+                className="mt-4 w-full"
+              >
+                Run Devnet Simulation
+              </GradientButton>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Market Overview */}
               <AnimatedCard delay={0.1}>
