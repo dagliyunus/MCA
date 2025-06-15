@@ -1,7 +1,7 @@
 // src/components/InsightsModal.tsx
 import { motion } from 'framer-motion';
 import { X, Lightbulb, TrendingUp, ArrowUpRight, PieChart } from 'lucide-react';
-import AnimatedCard from './AnimatedCard';
+import AnimatedCard from '../common/AnimatedCard';
 
 interface InsightsModalProps {
   show: boolean;

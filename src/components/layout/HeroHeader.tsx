@@ -1,9 +1,9 @@
 // src/components/HeroHeader.tsx
 import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, Brain, Globe, Shield, TrendingUp, Twitter } from 'lucide-react';
-import GradientButton from './GradientButton';
-import AnimatedCard from './AnimatedCard';
-import MobileNav from './MobileNav';
+import GradientButton from '../common/GradientButton';
+import AnimatedCard from '../common/AnimatedCard';
+import MobileNav from '../layout/MobileNav';
 
 interface HeroHeaderProps {
   appName: string;

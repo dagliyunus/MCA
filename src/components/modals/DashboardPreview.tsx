@@ -1,9 +1,9 @@
 // src/components/DashboardPreview.tsx
 import { motion } from 'framer-motion';
 import { X, LineChart, Brain, TrendingUp, TrendingDown, AlertCircle, Target, Cpu, Server, Shield, Activity } from 'lucide-react';
-import GradientButton from './GradientButton';
-import AnimatedCard from './AnimatedCard';
-import AnimatedCounter from './AnimatedCounter';
+import GradientButton from '../common/GradientButton';
+import AnimatedCard from '../common/AnimatedCard';
+import AnimatedCounter from '../common/AnimatedCounter';
 import { ResponsiveContainer, LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 interface AiSignal {

@@ -1,7 +1,7 @@
 // src/components/FeatureHighlight.tsx
 import { motion } from 'framer-motion';
 import { Brain, BarChart3, Shield } from 'lucide-react';
-import FeatureCard from './FeatureCard';
+import FeatureCard from '../common/FeatureCard';
 
 export default function FeatureHighlight() {
   return (

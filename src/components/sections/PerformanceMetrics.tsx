@@ -1,6 +1,6 @@
 // src/components/PerformanceMetrics.tsx
-import AnimatedCounter from './AnimatedCounter';
-import AnimatedCard from './AnimatedCard';
+import AnimatedCounter from '../common/AnimatedCounter';
+import AnimatedCard from '../common/AnimatedCard';
 import { Cpu, Target } from 'lucide-react';
 
 interface SystemMetrics {

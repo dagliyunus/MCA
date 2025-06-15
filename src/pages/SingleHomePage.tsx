@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import ParticleBackground from '../components/ParticleBackground';
-import AuthModal from '../components/AuthModal';
-import DashboardPreview from '../components/DashboardPreview';
-import InsightsModal from '../components/InsightsModal';
-import HeroHeader from '../components/HeroHeader';
-import FeatureHighlight from '../components/FeatureHighlight';
-import TechnologyStack from '../components/TechnologyStack';
-import PerformanceMetrics from '../components/PerformanceMetrics';
-import Footer from '../components/Footer';
+import ParticleBackground from '../components/common/ParticleBackground';
+import AuthModal from '../components/modals/AuthModal';
+import DashboardPreview from '../components/modals/DashboardPreview';
+import InsightsModal from '../components/modals/InsightsModal';
+import HeroHeader from '../components/layout/HeroHeader';
+import FeatureHighlight from '../components/sections/FeatureHighlight';
+import TechnologyStack from '../components/sections/TechnologyStack';
+import PerformanceMetrics from '../components/sections/PerformanceMetrics';
+import Footer from '../components/layout/Footer';
 import { simulateDevnetCheck } from '../utils/devnet';
 
 const initialTradingData = [

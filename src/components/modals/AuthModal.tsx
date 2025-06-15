@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import GradientButton from './GradientButton';
+import GradientButton from '../common/GradientButton';
 
 interface AuthModalProps {
   show: boolean;
