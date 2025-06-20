@@ -55,8 +55,27 @@ function SingleHomePage() {
     activeNodes: 1250,
     networkLoad: 67,
   });
+
   const [contractAddress, setContractAddress] = useState('');
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+
   const APP_NAME = 'MCA';
+
+  const onRunSimulation = async () => {
+    if (!contractAddress.trim()) {
+      alert("Please enter a contract address.");
+      return;
+    }
+
+    try {
+      const valid = await simulateDevnetCheck(contractAddress.trim());
+      setIsValid(valid);
+      alert(valid ? "✅ Token is valid on Devnet." : "❌ Invalid token.");
+    } catch {
+      setIsValid(null);
+      alert("⚠️ Simulation failed.");
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -125,19 +144,11 @@ function SingleHomePage() {
         onClose={() => setShowDashboardPreview(false)}
         contractAddress={contractAddress}
         onContractChange={setContractAddress}
-        onRunSimulation={async () => {
-            if (!contractAddress) return alert("Please enter a contract address.");
-            try {
-            const isValid = await simulateDevnetCheck(contractAddress);
-            alert(isValid ? "✅ Token is valid on Devnet." : "❌ Invalid token.");
-            } catch {
-            alert("⚠️ Simulation failed.");
-            }
-        }}
+        onRunSimulation={onRunSimulation}
         tradingData={tradingData}
         aiSignals={aiSignals as { type: 'buy' | 'sell' | 'alert'; asset: string; confidence: number; reason: string; timestamp: string; }[]}
         systemMetrics={systemMetrics}
-        />
+      />
 
       <InsightsModal show={showInsights} onClose={() => setShowInsights(false)} />
 
@@ -148,7 +159,13 @@ function SingleHomePage() {
         onInsightsClick={() => setShowInsights(true)}
       />
 
-      <FeatureHighlight />
+      <FeatureHighlight
+        contractAddress={contractAddress}
+        onContractChange={setContractAddress}
+        onRunSimulation={onRunSimulation}
+        isValid={isValid}
+      />
+
       <TechnologyStack />
       <PerformanceMetrics systemMetrics={systemMetrics} />
       <Footer appName={APP_NAME} />

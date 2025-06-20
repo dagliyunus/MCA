@@ -1,7 +1,6 @@
 // src/components/DashboardPreview.tsx
 import { motion } from 'framer-motion';
 import { X, LineChart, Brain, TrendingUp, TrendingDown, AlertCircle, Target, Cpu, Server, Shield, Activity } from 'lucide-react';
-import GradientButton from '../common/GradientButton';
 import AnimatedCard from '../common/AnimatedCard';
 import AnimatedCounter from '../common/AnimatedCounter';
 import { ResponsiveContainer, LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
@@ -28,9 +27,6 @@ interface DashboardPreviewProps {
 export default function DashboardPreview({
   show,
   onClose,
-  contractAddress,
-  onContractChange,
-  onRunSimulation,
   tradingData,
   aiSignals,
   systemMetrics
@@ -58,24 +54,6 @@ export default function DashboardPreview({
         </button>
         <h2 className="text-2xl font-bold text-white mb-6">AI Trading Dashboard</h2>
 
-        <div className="mb-6">
-          <label className="block text-purple-200 mb-2" htmlFor="contract">
-            Contract Address (Solana Devnet)
-          </label>
-          <input 
-            type="text" 
-            id="contract"
-            value={contractAddress}
-            onChange={(e) => onContractChange(e.target.value)}
-            className="w-full bg-purple-900/50 border border-purple-500/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500"
-            placeholder="Enter test token address..."
-          />
-          <div className="flex justify-center">
-            <GradientButton onClick={onRunSimulation} className="mt-4 w-full max-w-xs">
-              Run Devnet Simulation
-            </GradientButton>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Market Overview */}
